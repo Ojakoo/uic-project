@@ -11,8 +11,9 @@ export const entryRouter = router({
     }))
     .query(({ ctx, input }) => {
       return ctx.prisma.entry.create({data: input})
-  }),
-  getAll: publicProcedure.query(({ ctx }) => {
-    return ctx.prisma.entry.findMany();
-  }),
+    }),
+  getAll: publicProcedure
+    .query(({ ctx }) => {
+      return ctx.prisma.entry.findMany();
+    }),
 });
